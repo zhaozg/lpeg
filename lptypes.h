@@ -34,8 +34,12 @@
 
 #define lua_rawlen		lua_objlen
 
+#ifndef luaL_setfuncs
 #define luaL_setfuncs(L,f,n)	luaL_register(L,NULL,f)
+#endif
+#ifndef luaL_newlib
 #define luaL_newlib(L,f)	luaL_register(L,"lpeg",f)
+#endif
 
 typedef size_t lua_Unsigned;
 
